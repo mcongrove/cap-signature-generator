@@ -32,9 +32,9 @@
         };
 
         const template = {
-            generic: () => `<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><html><body><br /><h1 style="font-size: 12px; line-height: 12px; color: #001489; font-weight: bold; margin: 0 0 5px;"><font size="2" face="Arial, Helvetica Neue, Helvetica, sans-serif">${grade_type === 'Cadet' ? 'C/' : ''}${vals.grade} ${vals.name}</font></h1>${vals.title ? `<h2 style="font-size: 12px; line-height: 12px; color: #6b7070; font-weight: normal; margin: 0 0 5px;"><font size="2" face="Arial, Helvetica Neue, Helvetica, sans-serif">${vals.title}</font></h2>` : ''}<h2 style="font-size: 12px; line-height: 12px; color: #6b7070; font-weight: normal; margin: 0 0 20px;"><font size="2" face="Arial, Helvetica Neue, Helvetica, sans-serif">Civil Air Patrol, U.S. Air Force Auxiliary</font></h2>${vals.phone_1 ? `<p style="font-size: 12px; line-height: 12px; color: #6b7070; font-weight: normal; margin: 0 0 5px;"><font size="2" face="Arial, Helvetica Neue, Helvetica, sans-serif">(${vals.phone_1_type}) <a href="tel:${vals.phone_1}" style="color: #6b7070; text-decoration: none;">${vals.phone_1}</a></font></p>` : ''}${vals.phone_2 ? `<p style="font-size: 12px; line-height: 12px; color: #6b7070; font-weight: normal; margin: 0 0 5px;"><font size="2" face="Arial, Helvetica Neue, Helvetica, sans-serif">(${vals.phone_2_type}) <a href="tel:${vals.phone_2}" style="color: #6b7070; text-decoration: none;">${vals.phone_2}</a></font></p>` : ''}${vals.phone_3 ? `<p style="font-size: 12px; line-height: 12px; color: #6b7070; font-weight: normal; margin: 0 0 5px;"><font size="2" face="Arial, Helvetica Neue, Helvetica, sans-serif">(${vals.phone_3_type}) <a href="tel:${vals.phone_3}" style="color: #6b7070; text-decoration: none;">${vals.phone_3}</a></font></p>` : ''}<p style="font-size: 12px; line-height: 12px; color: #001489; font-weight: normal; margin: 0 0 5px;"><font size="2" face="Arial, Helvetica Neue, Helvetica, sans-serif"><a href="https://www.GoCivilAirPatrol.com" style="color: #001489; text-decoration: underline;">GoCivilAirPatrol.com</a></font></p>${vals.website_text && vals.website_url ? `<p style="font-size: 12px; line-height: 12px; color: #001489; font-weight: normal; margin: 0 0 5px;"><font size="2" face="Arial, Helvetica Neue, Helvetica, sans-serif"><a href="${vals.website_url}" style="color: #001489; text-decoration: underline;">${vals.website_text}</a></font></p>` : ''}<a href="https://www.GoCivilAirPatrol.com"><img src="https://cdn-assets-cloud.frontify.com/s3/frontify-cloud-files-us/eyJwYXRoIjoiZnJvbnRpZnlcL2FjY291bnRzXC9jMFwvMjE0MDgwXC9wcm9qZWN0c1wvMjkyNjI0XC9hc3NldHNcLzI3XC81MzQyMjUxXC82Mjk5NDRmMjVhMWFmZTQ3OTU1ZGI3MmQ2Mjc3NWIxMC0xNjI1MjAyNzIxLnBuZyJ9:frontify:Ge2dpJpUH5_SKpFFeHF_Hfelq97tfcWT2MQUzXgYjSM?width=175" width="175" height="27" style="margin: 20px 0;"></a><p style="font-size: 12px; line-height: 12px; color: #6b7070; font-weight: normal; font-style: italic; white-space: normal; line-height: 14px; margin: 0 0 5px;"><font size="2" face="Arial, Helvetica Neue, Helvetica, sans-serif">Volunteers serving America's communities, saving lives, and shaping futures.</font></p></body></html>`,
+            generic: () => `<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><html><body><br /><h1 style="font-size: 12px; line-height: 12px; color: #001489; font-weight: bold; margin: 0 0 5px;"><font size="2" face="Arial, Helvetica Neue, Helvetica, sans-serif">${grade_type === 'Cadet' ? 'C/' : ''}${vals.grade} ${vals.name}</font></h1>${vals.title ? `<h2 style="font-size: 12px; line-height: 12px; color: #6B7070; font-weight: normal; margin: 0 0 5px;"><font size="2" face="Arial, Helvetica Neue, Helvetica, sans-serif">${vals.title}</font></h2>` : ''}<h2 style="font-size: 12px; line-height: 12px; color: #6B7070; font-weight: bold; margin: 0 0 20px;"><font size="2" face="Arial, Helvetica Neue, Helvetica, sans-serif">Civil Air Patrol, U.S. Air Force Auxiliary</font></h2>${vals.phone_1 ? `<p style="font-size: 12px; line-height: 12px; color: #6B7070; font-weight: normal; margin: 0 0 5px;"><font size="2" face="Arial, Helvetica Neue, Helvetica, sans-serif">(${vals.phone_1_type}) <a href="tel:${vals.phone_1}" style="color: #6B7070; text-decoration: none;">${vals.phone_1}</a></font></p>` : ''}${vals.phone_2 ? `<p style="font-size: 12px; line-height: 12px; color: #6B7070; font-weight: normal; margin: 0 0 5px;"><font size="2" face="Arial, Helvetica Neue, Helvetica, sans-serif">(${vals.phone_2_type}) <a href="tel:${vals.phone_2}" style="color: #6B7070; text-decoration: none;">${vals.phone_2}</a></font></p>` : ''}${vals.phone_3 ? `<p style="font-size: 12px; line-height: 12px; color: #6B7070; font-weight: normal; margin: 0 0 5px;"><font size="2" face="Arial, Helvetica Neue, Helvetica, sans-serif">(${vals.phone_3_type}) <a href="tel:${vals.phone_3}" style="color: #6B7070; text-decoration: none;">${vals.phone_3}</a></font></p>` : ''}<p style="font-size: 12px; line-height: 12px; color: #001489; font-weight: normal; margin: 0 0 5px;"><font size="2" face="Arial, Helvetica Neue, Helvetica, sans-serif"><a href="https://www.GoCivilAirPatrol.com" style="color: #001489; text-decoration: underline;">GoCivilAirPatrol.com</a></font></p>${vals.website_text && vals.website_url ? `<p style="font-size: 12px; line-height: 12px; color: #001489; font-weight: normal; margin: 0 0 5px;"><font size="2" face="Arial, Helvetica Neue, Helvetica, sans-serif"><a href="${vals.website_url}" style="color: #001489; text-decoration: underline;">${vals.website_text}</a></font></p>` : ''}<a href="https://www.GoCivilAirPatrol.com"><img src="https://cdn-assets-cloud.frontify.com/s3/frontify-cloud-files-us/eyJwYXRoIjoiZnJvbnRpZnlcL2FjY291bnRzXC9jMFwvMjE0MDgwXC9wcm9qZWN0c1wvMjkyNjI0XC9hc3NldHNcLzI3XC81MzQyMjUxXC82Mjk5NDRmMjVhMWFmZTQ3OTU1ZGI3MmQ2Mjc3NWIxMC0xNjI1MjAyNzIxLnBuZyJ9:frontify:Ge2dpJpUH5_SKpFFeHF_Hfelq97tfcWT2MQUzXgYjSM?width=175" width="175" height="27" style="margin: 20px 0;"></a><p style="font-size: 12px; line-height: 12px; color: #6B7070; font-weight: normal; font-style: italic; white-space: normal; line-height: 14px; margin: 0 0 5px;"><font size="2" face="Arial, Helvetica Neue, Helvetica, sans-serif">Volunteers serving America's communities, saving lives, and shaping futures.</font></p></body></html>`,
             plaintext: () => `${grade_type === 'Cadet' ? 'C/' : ''}${vals.grade} ${vals.name}${vals.title ? `\n${vals.title}` : ''}\nCivil Air Patrol, U.S. Air Force Auxiliary${(vals.phone_1 || vals.phone_2 || vals.phone_3) ? (`\n${vals.phone_1 ? `\n(${vals.phone_1_type}) ${vals.phone_1}` : ''}${vals.phone_2 ? `\n(${vals.phone_2_type}) ${vals.phone_2}` : ''}${vals.phone_3 ? `\n(${vals.phone_3_type}) ${vals.phone_3}` : ''}`) : ''}\n\nhttps://www.GoCivilAirPatrol.com${vals.website_url ? `\n${vals.website_url}` : ''}`,
-            mobile: () => `${grade_type === 'Cadet' ? 'C/' : ''}${vals.grade} ${vals.name}${vals.wing ? `, ${vals.wing.toUpperCase()}` : ''}${vals.wing.length === 2 ? 'WG' : ''}\nCivil Air Patrol`
+            mobile: () => `${grade_type === 'Cadet' ? 'C/' : ''}${vals.grade} ${vals.name}${vals.wing ? `, ${vals.wing.toUpperCase()}` : ''}\nCivil Air Patrol`
         };
 
         $(document).ready(function() {
@@ -227,9 +227,18 @@
         label {
             flex: 1 0 auto;
             padding: 0 0 10px;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
         }
         label span {
             color: #FC2050;
+        }
+        label span.note {
+            color: rgb(158, 162, 162);
+            font-size: 12px;
+            flex: 1 1 100%;
+            text-align: right;
         }
 		button,
         a.button {
@@ -374,12 +383,13 @@
                 <input type="text" id="name" placeholder="Jane Doe" />
             </div>
             <div id="f_wing" style="display: none;">
-                <label for="wing">Wing<span>*</span></label>
+                <label for="wing">Wing<span>*</span><span class="note">Use 4-letter Wing, 3-letter Region, or “HQ”; no squadron designators</span></label>
                 <input type="text" id="wing" placeholder="TXWG" />
             </div>
             <div id="f_title">
-                <label for="title">Title(s) / Duty Position(s)</label>
-                <textarea type="text" id="title" placeholder="TXWG Director of Operations"></textarea>
+                <label for="title">Duty Position(s)<span class="note">Unit name followed by duty position</span></label>
+                <textarea type="text" id="title" placeholder="Texas Wing Director of Operations
+Apollo Comp. Sq. Operations Officer"></textarea>
             </div>
             <div id="f_phone">
                 <label for="phone_1">Phone Number(s)</label>
@@ -422,7 +432,7 @@
             </div>
         </form>
 
-        <footer>Version 2. Last modified on August 14, 2021. Created by <a href="mailto:mcongrove@cap.gov">Lt Col Matthew Congrove</a>.</footer>
+        <footer>Version 3. Last modified on August 17, 2021. Created by <a href="mailto:mcongrove@cap.gov">Lt Col Matthew Congrove</a>.</footer>
     </div>
 
     <div class="middle">
