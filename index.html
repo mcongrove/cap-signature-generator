@@ -62,42 +62,20 @@
                 }
 
                 if (type === 'generic') {
-                    $('#copy-text').html('Copy Rich Text');
-                    $('#copy-html').show();
-                    $('.note').show();
+                    $('.middle').show();
                 } else {
-                    $('#copy-text').html('Copy Text');
-                    $('#copy-html').hide();
-                    $('.note').hide();
+                    $('.middle').hide();
                 }
 
                 updateInput();
                 updateOutput();
             });
 
-            $('#copy-text').click(function() {
-                console.warn(2);
-                copyRichText(document.getElementById("output-text").innerHTML);
-            });
-
-            $('#copy-html').click(function() {
-                console.warn(1);
-                const e = document.getElementById("output-html");
+            $('#copy-output').click(function() {
+                const e = document.getElementById("output");
                 e.select();
                 document.execCommand("copy");
             });
-
-            function copyRichText(str) {
-                function listener(e) {
-                    e.clipboardData.setData("text/html", str);
-                    e.clipboardData.setData("text/plain", str);
-                    e.preventDefault();
-                }
-
-                document.addEventListener("copy", listener);
-                document.execCommand("copy");
-                document.removeEventListener("copy", listener);
-            };
             
             $('#grade').on('keyup blur', function() { updateInput() });
             $('#name').on('keyup blur', function() { updateInput() });
@@ -147,8 +125,8 @@
         }
 
         function updateOutput() {
-            $('#output-html').val(template[type]);
-            $('#output-text').html(template[type]);
+            $('#output').val(template[type]);
+            $('#preview').html(template[type]);
         }
     </script>
 	<style type="text/css">
@@ -244,6 +222,7 @@
         form {
             margin: 25px 0 0;
             padding: 25px 0 0;
+            border-top: 1px solid #F3F4F6;
         }
         label {
             flex: 1 0 auto;
@@ -300,10 +279,11 @@
         }
         div.left {
             background: #FFF;
-            flex: 1 1 400px;
+            flex: 1 1 40%;
+            min-width: 400px;
             max-width: 600px;
             overflow-y: auto;
-            border-right: 1px solid #DDD;
+            border-right: 1px solid #F3F4F6;
         }
         div.left > form > div {
             display: flex;
@@ -328,32 +308,22 @@
         div.left div.dual *:first-child {
             margin-right: 15px;
         }
+        div.middle {
+            flex: 1 1 30%;
+            min-width: 200px;
+        }
+        div.middle textarea {
+            width: calc(100% - 25px);
+            height: 250px;
+            font-size: 13px;
+            font-family: monospace;
+            margin-top: 15px;
+        }
         div.right {
-            flex: 1 1 50%;
+            flex: 1 1 30%;
             min-width: 200px;
             background: #FFF;
             font-family: Arial, sans-serif;
-        }
-        div.right #output-text {
-            margin-bottom: 40px;
-        }
-        div.right #output-html {
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-            padding: 0;
-            margin: 0;
-            border: 0;
-        }
-        div.right #copy-html {
-            background: #EEE;
-            color: #999;
-            margin-left: 10px;
-        }
-        div.right p {
-            color:rgb(186, 12, 47);
-            margin: 20px 0;
-            max-width: 500px;
         }
 	</style>
 </head>
@@ -364,7 +334,7 @@
             Civil Air Patrol Email Signature Generator
         </h1>
         <p>
-            Fill out your details below, verify the preview in the right column is correct, and then copy and paste it into your mail client.
+            Fill out your details below, and verify the preview in the right column is correct.
         </p>
         <form>
             <div>
@@ -462,18 +432,22 @@ Apollo Comp. Sq. Operations Officer"></textarea>
             </div>
         </form>
 
-        <footer>Version 5. Last modified on September 8, 2021. Created by <a href="mailto:mcongrove@cap.gov">Lt Col Matthew Congrove</a>.</footer>
+        <footer>Version 4. Last modified on August 28, 2021. Created by <a href="mailto:mcongrove@cap.gov">Lt Col Matthew Congrove</a>.</footer>
+    </div>
+
+    <div class="middle">
+        <p>
+            If your email client supports HTML signatures, copy and paste the content from below. If it doesn't, highlight, copy and paste the content from the right column.
+        </p>
+        <textarea id="output"></textarea>
+        <button id="copy-output">Copy</button>
+        <p style="margin: 40px 0 20px; color:rgb(186, 12, 47);">
+            <svg height="14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="exclamation-triangle" class="svg-inline--fa fa-exclamation-triangle fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"></path></svg> If you have problems with formatting after pasting the signature into your email client, you may need to use another templating option. Please visit the <a href="https://company-214080.frontify.com/d/crhrf1Aw1Ci9/brand-guide#/resources-tools/email-signature">Brand Guide Email Signature page</a> for more options.
+        </p>
     </div>
 
     <div class="right">
-        <pre id="output-text"></pre>
-        <button id="copy-text">Copy Rich Text</button>
-        <button id="copy-html">Copy HTML</button>
-        <p class="note">
-            <svg height="14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="exclamation-triangle" class="svg-inline--fa fa-exclamation-triangle fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"></path></svg>
-            If you have problems with formatting after pasting the signature into your email client, you may need to use another templating option. Please visit the <a href="https://company-214080.frontify.com/d/crhrf1Aw1Ci9/brand-guide#/resources-tools/email-signature">Brand Guide Email Signature page</a> for more options.
-        </p>
-        <textarea id="output-html"></textarea>
+        <pre id="preview"></pre>
     </div>
 
 </body>
