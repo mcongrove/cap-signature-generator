@@ -21,7 +21,7 @@
 			const vals = {
 				name: "Jane Doe",
 				grade_type: "Senior",
-				grade: "2d Lt",
+				grade: "2nd Lt.",
 				wing: "",
 				title: "",
 				phone_1_type: "M",
@@ -483,12 +483,7 @@
 				display: flex;
 				flex-direction: row;
 				margin-bottom: 15px;
-			}
-			div.left div.dual:last-child {
-				margin: 0;
-			}
-			div.left div.dual *:first-child {
-				margin-right: 15px;
+				gap: 15px;
 			}
 			div.middle {
 				flex: 1 1 30%;
@@ -526,7 +521,7 @@
 					</select>
 				</div>
 				<div>
-					<label for="grade">Grade<span>*</span></label>
+					<label for="grade">Grade & Name<span>*</span></label>
 					<div class="dual">
 						<select id="grade_type">
 							<option value="Senior" selected>Senior</option>
@@ -534,45 +529,68 @@
 						</select>
 
 						<select id="grade">
-							<option value="AB" data-cadet="true" disabled>
-								AB
+							<option value="Airman" data-cadet="true" disabled>
+								Airman Basic
 							</option>
-							<option value="Amn" data-cadet="true" disabled>
-								Amn
+							<option value="Airman" data-cadet="true" disabled>
+								Airman
 							</option>
-							<option value="A1C" data-cadet="true" disabled>
-								A1C
+							<option
+								value="Airman 1st Class"
+								data-cadet="true"
+								disabled
+							>
+								Airman 1st Class
 							</option>
-							<option value="SrA" data-cadet="true" disabled>
-								SrA
+							<option
+								value="Senior Airman"
+								data-cadet="true"
+								disabled
+							>
+								Senior Airman
 							</option>
-							<option value="SSgt">SSgt</option>
-							<option value="TSgt">TSgt</option>
-							<option value="MSgt">MSgt</option>
-							<option value="SMSgt">SMSgt</option>
-							<option value="CMSgt">CMSgt</option>
-							<option value="" data-senior="true">SM</option>
-							<option value="FO" data-senior="true">FO</option>
-							<option value="TFO" data-senior="true">TFO</option>
-							<option value="SFO" data-senior="true">SFO</option>
-							<option value="2d Lt" selected>2d Lt</option>
-							<option value="1st Lt">1st Lt</option>
-							<option value="Capt">Capt</option>
-							<option value="Maj">Maj</option>
-							<option value="Lt Col">Lt Col</option>
-							<option value="Col">Col</option>
-							<option value="Brig Gen" data-senior="true">
-								Brig Gen
+							<option value="Staff Sgt.">Staff Sgt.</option>
+							<option value="Tech. Sgt.">Tech. Sgt.</option>
+							<option value="Master Sgt.">Master Sgt.</option>
+							<option value="Senior Master Sgt.">
+								Senior Master Sgt.
 							</option>
-							<option value="Maj Gen" data-senior="true">
-								Maj Gen
+							<option value="Chief Master Sgt.">
+								Chief Master Sgt.
+							</option>
+							<option value="" data-senior="true">
+								Senior Member
+							</option>
+							<option value="Flight Officer" data-senior="true">
+								Flight Officer
+							</option>
+							<option
+								value="Tech. Flight Officer"
+								data-senior="true"
+							>
+								Tech. Flight Officer
+							</option>
+							<option
+								value="Senior Flight Officer"
+								data-senior="true"
+							>
+								Senior Flight Officer
+							</option>
+							<option value="2nd Lt." selected>2nd Lt.</option>
+							<option value="1st Lt.">1st Lt.</option>
+							<option value="Capt.">Capt.</option>
+							<option value="Maj.">Maj.</option>
+							<option value="Lt. Col.">Lt. Col.</option>
+							<option value="Col.">Col.</option>
+							<option value="Brig. Gen." data-senior="true">
+								Brig. Gen.
+							</option>
+							<option value="Maj. Gen." data-senior="true">
+								Maj. Gen.
 							</option>
 						</select>
+						<input type="text" id="name" placeholder="Jane Doe" />
 					</div>
-				</div>
-				<div>
-					<label for="name">Name<span>*</span></label>
-					<input type="text" id="name" placeholder="Jane Doe" />
 				</div>
 				<div id="f_wing" style="display: none">
 					<label for="wing"
@@ -659,8 +677,8 @@ Apollo Comp. Sq. Operations Officer"
 			</form>
 
 			<footer>
-				Version 7. Last modified on October 17, 2022. Created by
-				<a href="mailto:mcongrove@cap.gov">Lt Col Matthew Congrove</a>.
+				Version 8. Last modified on December 29, 2022. Created by
+				<a href="mailto:mcongrove@cap.gov">Lt. Col. Matthew Congrove</a>.
 			</footer>
 		</div>
 
