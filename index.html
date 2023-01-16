@@ -15,175 +15,177 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
 		<script type="text/javascript">
-			let type = "generic";
-			let grade_type = "Senior";
+			let type = 'generic';
+			let grade_type = 'Senior';
 
 			const vals = {
-				name: "Jane Doe",
-				grade_type: "Senior",
-				grade: "2nd Lt.",
-				wing: "",
-				title: "",
-				phone_1_type: "M",
-				phone_1: "",
-				phone_2_type: "M",
-				phone_2: "",
-				phone_3_type: "M",
-				phone_3: "",
-				website_text: "",
-				website_url: "",
+				name: 'Jane Doe',
+				grade_type: 'Senior',
+				grade: '2nd Lt.',
+				wing: '',
+				title: '',
+				phone_1_type: 'M',
+				phone_1: '',
+				phone_2_type: 'M',
+				phone_2: '',
+				phone_3_type: 'M',
+				phone_3: '',
+				website_text: '',
+				website_url: '',
 			};
 
 			const template = {
 				generic: () =>
-					`<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><html><body><br /><h1 style="font-size: 12px; line-height: 12px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #001871; font-weight: bold; margin: 0 0 5px;">${
-						grade_type === "Cadet" ? "Cadet " : ""
+					`<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><html><body><br /><h1 style="font-size: 12px; line-height: 12px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #001871; font-weight: bold; margin: 0 0 5px;">${
+						grade_type === 'Cadet' ? 'Cadet ' : ''
 					}${vals.grade && `${vals.grade} `}${vals.name}</h1>${
 						vals.title
 							? `<h2 style="font-size: 12px; line-height: 12px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #9EA2A2; font-weight: normal; margin: 0 0 5px;">${vals.title}</h2>`
-							: ""
+							: ''
 					}<h2 style="font-size: 12px; line-height: 12px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #9EA2A2; font-weight: bold; margin: 0 0 20px;">Civil Air Patrol, U.S. Air Force Auxiliary</h2>${
 						vals.phone_1
 							? `<p style="font-size: 12px; line-height: 12px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #9EA2A2; font-weight: normal; margin: 0 0 5px;">(${vals.phone_1_type}) <a href="tel:${vals.phone_1}" style="color: #9EA2A2; text-decoration: none;">${vals.phone_1}</a></p>`
-							: ""
+							: ''
 					}${
 						vals.phone_2
 							? `<p style="font-size: 12px; line-height: 12px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #9EA2A2; font-weight: normal; margin: 0 0 5px;">(${vals.phone_2_type}) <a href="tel:${vals.phone_2}" style="color: #9EA2A2; text-decoration: none;">${vals.phone_2}</a></p>`
-							: ""
+							: ''
 					}${
 						vals.phone_3
 							? `<p style="font-size: 12px; line-height: 12px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #9EA2A2; font-weight: normal; margin: 0 0 5px;">(${vals.phone_3_type}) <a href="tel:${vals.phone_3}" style="color: #9EA2A2; text-decoration: none;">${vals.phone_3}</a></p>`
-							: ""
+							: ''
 					}<p style="font-size: 12px; line-height: 12px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #001871; font-weight: normal; margin: 0 0 5px;"><a href="https://www.GoCivilAirPatrol.com" style="color: #001871; text-decoration: underline;">GoCivilAirPatrol.com</a></p>${
 						vals.website_text && vals.website_url
 							? `<p style="font-size: 12px; line-height: 12px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #001871; font-weight: normal; margin: 0 0 5px;"><a href="${vals.website_url}" style="color: #001871; text-decoration: underline;">${vals.website_text}</a></p>`
-							: ""
+							: ''
 					}<a href="https://www.GoCivilAirPatrol.com"><img src="https://www.gocivilairpatrol.com/media/cms/CAPEmailLogoNew_0F67A836DA869.png" style="margin: 10px 0 10px -5px;"></a><p style="font-size: 12px; line-height: 12px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #9EA2A2; font-weight: normal; font-style: italic; white-space: normal; line-height: 14px; margin: 0 0 5px;">Volunteers serving America's communities, saving lives, and shaping futures.</p></body></html>`,
 				plaintext: () =>
-					`${grade_type === "Cadet" ? "Cadet " : ""}${vals.grade} ${
+					`${grade_type === 'Cadet' ? 'Cadet'  : ''}${vals.grade || ''} ${
 						vals.name
 					}${
-						vals.title ? `\n${vals.title}` : ""
+						vals.title ? `\n${vals.title}` : ''
 					}\nCivil Air Patrol, U.S. Air Force Auxiliary${
 						vals.phone_1 || vals.phone_2 || vals.phone_3
 							? `\n${
 									vals.phone_1
 										? `\n(${vals.phone_1_type}) ${vals.phone_1}`
-										: ""
+										: ''
 							  }${
 									vals.phone_2
 										? `\n(${vals.phone_2_type}) ${vals.phone_2}`
-										: ""
+										: ''
 							  }${
 									vals.phone_3
 										? `\n(${vals.phone_3_type}) ${vals.phone_3}`
-										: ""
+										: ''
 							  }`
-							: ""
+							: ''
 					}\n\nhttps://www.GoCivilAirPatrol.com${
-						vals.website_url ? `\n${vals.website_url}` : ""
+						vals.website_url ? `\n${vals.website_url}` : ''
 					}`,
 				mobile: () =>
-					`${grade_type === "Cadet" ? "Cadet " : ""}${vals.grade} ${
+					`${grade_type === 'Cadet' ? 'Cadet ' : ''}${vals.grade} ${
 						vals.name
 					}${
-						vals.wing ? `, ${vals.wing.toUpperCase()}` : ""
+						vals.wing ? `, ${vals.wing.toUpperCase()}` : ''
 					}\nCivil Air Patrol`,
 			};
 
 			$(document).ready(function () {
 				updateOutput();
 
-				$("#type").change(function () {
+				$('#type').change(function () {
 					type = $(this).val();
 
-					if (type === "mobile") {
-						$("#f_wing").show();
-						$("#f_title").hide();
-						$("#f_phone").hide();
-						$("#f_website").hide();
+					if (type === 'mobile') {
+						$('#f_wing').show();
+						$('#f_title').hide();
+						$('#f_phone').hide();
+						$('#f_website').hide();
 					} else {
-						$("#f_wing").hide();
-						$("#f_title").show();
-						$("#f_phone").show();
-						$("#f_website").show();
+						$('#f_wing').hide();
+						$('#f_title').show();
+						$('#f_phone').show();
+						$('#f_website').show();
 					}
 
-					if (type === "plaintext") {
-						$("#website_text").hide();
+					if (type === 'plaintext') {
+						$('#website_text').hide();
 					} else {
-						$("#website_text").show();
+						$('#website_text').show();
 					}
 
-					if (type === "generic") {
-						$(".middle").show();
+					if (type === 'generic') {
+						$('.middle').show();
 					} else {
-						$(".middle").hide();
+						$('.middle').hide();
 					}
 
 					updateInput();
 					updateOutput();
 				});
 
-				$("#copy-output").click(function () {
-					const e = document.getElementById("output");
+				$('#copy-output').click(function () {
+					const e = document.getElementById('output');
 					e.select();
-					document.execCommand("copy");
+					document.execCommand('copy');
 				});
 
-				$("#grade").on("change", function () {
+				$('#grade').on('change', function () {
 					updateInput();
 				});
-				$("#name").on("keyup blur", function () {
+				$('#name').on('keyup blur', function () {
 					updateInput();
 				});
-				$("#wing").on("keyup blur", function () {
+				$('#wing').on('keyup blur', function () {
 					updateInput();
 				});
-				$("#title").on("keyup blur", function () {
+				$('#title').on('keyup blur', function () {
 					updateInput();
 				});
-				$("#phone_1_type").change(function () {
+				$('#phone_1_type').change(function () {
 					updateInput();
 				});
-				$("#phone_1").on("keyup blur", function () {
+				$('#phone_1').on('keyup blur', function () {
 					updateInput();
 				});
-				$("#phone_2_type").change(function () {
+				$('#phone_2_type').change(function () {
 					updateInput();
 				});
-				$("#phone_2").on("keyup blur", function () {
+				$('#phone_2').on('keyup blur', function () {
 					updateInput();
 				});
-				$("#phone_3_type").change(function () {
+				$('#phone_3_type').change(function () {
 					updateInput();
 				});
-				$("#phone_3").on("keyup blur", function () {
+				$('#phone_3').on('keyup blur', function () {
 					updateInput();
 				});
-				$("#website_text").on("keyup blur", function () {
+				$('#website_text').on('keyup blur', function () {
 					updateInput();
 				});
-				$("#website_url").on("keyup blur", function () {
+				$('#website_url').on('keyup blur', function () {
 					updateInput();
 				});
 
-				$("#grade_type").change(function () {
+				$('#grade_type').change(function () {
 					grade_type = $(this).val();
 
 					// Gate the grades based on SM or Cadet
-					if (grade_type === "Senior") {
+					if (grade_type === 'Senior') {
 						$('option[data-cadet="true"]').attr(
-							"disabled",
-							"disabled"
+							'disabled',
+							'disabled'
 						);
-						$('option[data-senior="true"]').removeAttr("disabled");
+						$('option[data-senior="true"]').removeAttr('disabled');
+						$('#grade').val('');
 					} else {
 						$('option[data-senior="true"]').attr(
-							"disabled",
-							"disabled"
+							'disabled',
+							'disabled'
 						);
-						$('option[data-cadet="true"]').removeAttr("disabled");
+						$('option[data-cadet="true"]').removeAttr('disabled');
+						$('#grade').val('Airman');
 					}
 
 					updateInput();
@@ -191,29 +193,31 @@
 			});
 
 			function updateInput() {
-				vals["grade"] = $("#grade").val();
-				if ($("#name").val()) {
-					vals["name"] = $("#name").val();
+				vals['grade'] = $('#grade').val();
+				
+				if ($('#name').val()) {
+					vals['name'] = $('#name').val();
 				} else {
-					vals["name"] = "Jane Doe";
+					vals['name'] = 'Jane Doe';
 				}
-				vals["wing"] = $("#wing").val();
-				vals["title"] = $("#title").val();
-				vals["phone_1_type"] = $("#phone_1_type").val();
-				vals["phone_1"] = $("#phone_1").val();
-				vals["phone_2_type"] = $("#phone_2_type").val();
-				vals["phone_2"] = $("#phone_2").val();
-				vals["phone_3_type"] = $("#phone_3_type").val();
-				vals["phone_3"] = $("#phone_3").val();
-				vals["website_text"] = $("#website_text").val();
-				vals["website_url"] = $("#website_url").val();
+
+				vals['wing'] = $('#wing').val();
+				vals['title'] = $('#title').val();
+				vals['phone_1_type'] = $('#phone_1_type').val();
+				vals['phone_1'] = $('#phone_1').val();
+				vals['phone_2_type'] = $('#phone_2_type').val();
+				vals['phone_2'] = $('#phone_2').val();
+				vals['phone_3_type'] = $('#phone_3_type').val();
+				vals['phone_3'] = $('#phone_3').val();
+				vals['website_text'] = $('#website_text').val();
+				vals['website_url'] = $('#website_url').val();
 
 				updateOutput();
 			}
 
 			function updateOutput() {
-				$("#output").val(template[type]);
-				$("#preview").html(template[type]);
+				$('#output').val(template[type]);
+				$('#preview').html(template[type]);
 			}
 		</script>
 		<style type="text/css">
@@ -677,7 +681,7 @@ Apollo Comp. Sq. Operations Officer"
 			</form>
 
 			<footer>
-				Version 8. Last modified on December 29, 2022. Created by
+				Version 9. Last modified on January 15, 2023. Created by
 				<a href="mailto:mcongrove@cap.gov">Lt. Col. Matthew Congrove</a>.
 			</footer>
 		</div>
